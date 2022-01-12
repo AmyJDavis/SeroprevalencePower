@@ -1382,11 +1382,14 @@ server <- function(input, output,session) {
     popB1=rbinom(10000,ceiling(nB1),pB1)/nB1
     popB2=rbinom(10000,ceiling(nB2),pB2)/nB2
     
-    popAd=popA2-popA1
-    popBd=popB2-popB1
+    poplowA=rbinom(10000,ceiling(nA1),0.5)/nA1-rbinom(10000,ceiling(nA2),0.5)/nA2
+    poplowB=rbinom(10000,ceiling(nB1),0.5)/nB1-rbinom(10000,ceiling(nB2),0.5)/nB2
+    
+    popAd=if(pA1>pA2){poplowA}else{popA2-popA1}
+    popBd=if(pB1>pB2){poplowB}else{popB2-popB1}
     
     boxplot(cbind(popAd,popBd),ylab="Change in seroprevalence (Pre to Post bait)",col=viridis((2)),names=c("Trt A","Trt B"),
-            main="Difference we are testing for between treatments")
+            main="Difference we are testing for between treatments",ylim=c(min(min(popAd,popBd),-0.5),1))
     
   })
   
@@ -1604,7 +1607,7 @@ server <- function(input, output,session) {
     ### Power depiction
     p0vals=rnorm(100000,0,sqrt((pA1*(1-pA1))/nA1+(pA2*(1-pA2))/(k1*nA1)+(pB1*(1-pB1))/(k2*nA1)+(pB2*(1-pB2))/(k3*nA1)))
     p0den=density(p0vals)
-    pvals=rnorm(100000,abs(abs(pA1-pA2)-abs(pB1-pB2)),sqrt((pA1*(1-pA1))/nA1+(pA2*(1-pA2))/(k1*nA1)+(pB1*(1-pB1))/(k2*nA1)+(pB2*(1-pB2))/(k3*nA1)))
+    pvals=rnorm(100000,abs(max(pA2-pA1,0)-max(pB2-pB1,0)),sqrt((pA1*(1-pA1))/nA1+(pA2*(1-pA2))/(k1*nA1)+(pB1*(1-pB1))/(k2*nA1)+(pB2*(1-pB2))/(k3*nA1)))
     pden=density(pvals)
     
     plot(p0den,xlab="Difference in seroprevalence",main="Power depiction",xlim=c(min(p0den$x,pden$x),max(p0den$x,pden$x)))
