@@ -83,7 +83,7 @@ server <- function(input, output,session) {
       
     }else if(input$whichpn=="A) Estimate single seroprevalence (either pre or post baiting)"&input$sorp=="Power"){
       sidebarMenu(
-        menuItem(tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
+        tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
                  tabItem("User Inputs",sliderInput("seroprev", "True seroprevalence (S)", min = 0, max = 1,value = 0.2)),
                  tabItem("User Inputs",sliderInput("samplea", "# of animals sampled", min = 0, max = 200,value = 30)),
                  tags$h3("Power analysis options"),
@@ -93,11 +93,11 @@ server <- function(input, output,session) {
                  tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
                                                     choiceNames = list("0.01","0.05","0.10","0.20"),
                                                     choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
-        )
+        
       )
     }else if(input$whichpn=="A) Estimate single seroprevalence (either pre or post baiting)"&input$sorp=="Sample size"){
       sidebarMenu(
-        menuItem(tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
+        tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
                  tabItem("User Inputs",sliderInput("seroprev", "True seroprevalence (S)", min = 0, max = 1,value = 0.2)),
                  tags$h3("Power analysis options"),
                  tabItem("User Inputs",sliderInput("powera", "Power you want", min = 0.05, max = 0.95,value = 0.8)),
@@ -107,11 +107,11 @@ server <- function(input, output,session) {
                  tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
                                                     choiceNames = list("0.01","0.05","0.10","0.20"),
                                                     choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
-        )
+        
       )
     }else if(input$whichpn=="B) Compare seroprevalence in two conditions (either different treatments or change in one treatment after baiting)"&input$sorp=="Power"){
       sidebarMenu(
-        menuItem(tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
+        tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
                  tabItem("User Inputs",sliderInput("seroprev1", "True seroprevalence treatment A", min = 0, max = 1,value = 0.2)),
                  tabItem("User Inputs",sliderInput("seroprev2", "True seroprevalence treatment B", min = 0, max = 1,value = 0.5)),
                  tabItem("User Inputs",sliderInput("samplea1", "# of animals sampled treatment A", min = 0, max = 200,value = 30)),
@@ -120,11 +120,11 @@ server <- function(input, output,session) {
                  tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
                                                     choiceNames = list("0.01","0.05","0.10","0.20"),
                                                     choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
-        )
+        
       )
     }else if(input$whichpn=="B) Compare seroprevalence in two conditions (either different treatments or change in one treatment after baiting)"&input$sorp=="Sample size"){
       sidebarMenu(
-        menuItem(tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
+        tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
                  tabItem("User Inputs",sliderInput("seroprev1", "True seroprevalence treatment A", min = 0, max = 1,value = 0.2)),
                  tabItem("User Inputs",sliderInput("seroprev2", "True seroprevalence treatment B", min = 0, max = 1,value = 0.5)),
                  tags$h3("Power analysis options"),
@@ -132,11 +132,11 @@ server <- function(input, output,session) {
                  tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
                                                     choiceNames = list("0.01","0.05","0.10","0.20"),
                                                     choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
-        )
+        
       )
     }else if(input$whichpn=="C) Compare changes in seroprevalence between two treatments"&input$sorp=="Power"){
       sidebarMenu(
-        menuItem(tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
+        tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
                  tabItem("User Inputs",sliderInput("seroprevA1", "Expected seroprevalence pre-bait treatment A", min = 0, max = 1,value = 0.2)),
                  tabItem("User Inputs",sliderInput("seroprevA2", "Expected seroprevalence post-bait treatment A", min = 0, max = 1,value = 0.3)),
                  tabItem("User Inputs",sliderInput("seroprevB1", "Expected seroprevalence pre-bait treatment B", min = 0, max = 1,value = 0.2)),
@@ -149,11 +149,11 @@ server <- function(input, output,session) {
                  tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
                                                     choiceNames = list("0.01","0.05","0.10","0.20"),
                                                     choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
-        )
+        
       )
     }else if(input$whichpn=="C) Compare changes in seroprevalence between two treatments"&input$sorp=="Sample size"){
       sidebarMenu(
-        menuItem(tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
+        tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
                  tabItem("User Inputs",sliderInput("seroprevA1", "Expected seroprevalence pre-bait treatment A", min = 0, max = 1,value = 0.2)),
                  tabItem("User Inputs",sliderInput("seroprevA2", "Expected seroprevalence post-bait treatment A", min = 0, max = 1,value = 0.3)),
                  tabItem("User Inputs",sliderInput("seroprevB1", "Expected seroprevalence pre-bait treatment B", min = 0, max = 1,value = 0.2)),
@@ -163,7 +163,7 @@ server <- function(input, output,session) {
                  tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
                                                     choiceNames = list("0.01","0.05","0.10","0.20"),
                                                     choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
-        )
+        
       )
     }
     
@@ -1639,3 +1639,4 @@ server <- function(input, output,session) {
 
 # Run the application 
 shinyApp(ui = ui, server = server,options=list(height=1080))
+
