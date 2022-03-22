@@ -84,85 +84,85 @@ server <- function(input, output,session) {
     }else if(input$whichpn=="A) Estimate single seroprevalence (either pre or post baiting)"&input$sorp=="Power"){
       sidebarMenu(
         tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
-                 tabItem("User Inputs",sliderInput("seroprev", "True seroprevalence (S)", min = 0, max = 1,value = 0.2)),
-                 tabItem("User Inputs",sliderInput("samplea", "# of animals sampled", min = 0, max = 200,value = 30)),
-                 tags$h3("Power analysis options"),
-                 tabItem("User Inputs",sliderInput("serocomp","What seroprevalence (S0) do you want be able to say your value is different from?",min=0,max=1,value=0)),
-                 tabItem("User Inputs",selectInput("compdirection","What comparison do you want to test?",choices=
-                                                     c("Greater than S0","Different from S0","Less than S0"),selected = "Different from S0")),
-                 tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
-                                                    choiceNames = list("0.01","0.05","0.10","0.20"),
-                                                    choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
+        tabItem("User Inputs",sliderInput("seroprev", "True seroprevalence (S)", min = 0, max = 1,value = 0.2)),
+        tabItem("User Inputs",sliderInput("samplea", "# of animals sampled", min = 0, max = 200,value = 30)),
+        tags$h3("Power analysis options"),
+        tabItem("User Inputs",sliderInput("serocomp","What seroprevalence (S0) do you want be able to say your value is different from?",min=0,max=1,value=0)),
+        tabItem("User Inputs",selectInput("compdirection","What comparison do you want to test?",choices=
+                                            c("Greater than S0","Different from S0","Less than S0"),selected = "Different from S0")),
+        tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
+                                           choiceNames = list("0.01","0.05","0.10","0.20"),
+                                           choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
         
       )
     }else if(input$whichpn=="A) Estimate single seroprevalence (either pre or post baiting)"&input$sorp=="Sample size"){
       sidebarMenu(
         tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
-                 tabItem("User Inputs",sliderInput("seroprev", "True seroprevalence (S)", min = 0, max = 1,value = 0.2)),
-                 tags$h3("Power analysis options"),
-                 tabItem("User Inputs",sliderInput("powera", "Power you want", min = 0.05, max = 0.95,value = 0.8)),
-                 tabItem("User Inputs",sliderInput("serocomp","What seroprevalence (S0) do you want be able to say your value is different from?",min=0,max=1,value=0)),
-                 tabItem("User Inputs",selectInput("compdirection","What comparison do you want to test?",choices=
-                                                     c("Greater than S0","Different from S0","Less than S0"),selected = "Different from S0")),
-                 tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
-                                                    choiceNames = list("0.01","0.05","0.10","0.20"),
-                                                    choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
+        tabItem("User Inputs",sliderInput("seroprev", "True seroprevalence (S)", min = 0, max = 1,value = 0.2)),
+        tags$h3("Power analysis options"),
+        tabItem("User Inputs",sliderInput("powera", "Power you want", min = 0.05, max = 0.95,value = 0.8)),
+        tabItem("User Inputs",sliderInput("serocomp","What seroprevalence (S0) do you want be able to say your value is different from?",min=0,max=1,value=0)),
+        tabItem("User Inputs",selectInput("compdirection","What comparison do you want to test?",choices=
+                                            c("Greater than S0","Different from S0","Less than S0"),selected = "Different from S0")),
+        tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
+                                           choiceNames = list("0.01","0.05","0.10","0.20"),
+                                           choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
         
       )
     }else if(input$whichpn=="B) Compare seroprevalence in two conditions (either different treatments or change in one treatment after baiting)"&input$sorp=="Power"){
       sidebarMenu(
         tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
-                 tabItem("User Inputs",sliderInput("seroprev1", "True seroprevalence treatment A", min = 0, max = 1,value = 0.2)),
-                 tabItem("User Inputs",sliderInput("seroprev2", "True seroprevalence treatment B", min = 0, max = 1,value = 0.5)),
-                 tabItem("User Inputs",sliderInput("samplea1", "# of animals sampled treatment A", min = 0, max = 200,value = 30)),
-                 tabItem("User Inputs",sliderInput("samplea2", "# of animals sampled treatment B", min = 0, max = 200,value = 30)),
-                 tags$h3("Power analysis options"),
-                 tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
-                                                    choiceNames = list("0.01","0.05","0.10","0.20"),
-                                                    choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
+        tabItem("User Inputs",sliderInput("seroprev1", "True seroprevalence treatment A", min = 0, max = 1,value = 0.2)),
+        tabItem("User Inputs",sliderInput("seroprev2", "True seroprevalence treatment B", min = 0, max = 1,value = 0.5)),
+        tabItem("User Inputs",sliderInput("samplea1", "# of animals sampled treatment A", min = 0, max = 200,value = 30)),
+        tabItem("User Inputs",sliderInput("samplea2", "# of animals sampled treatment B", min = 0, max = 200,value = 30)),
+        tags$h3("Power analysis options"),
+        tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
+                                           choiceNames = list("0.01","0.05","0.10","0.20"),
+                                           choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
         
       )
     }else if(input$whichpn=="B) Compare seroprevalence in two conditions (either different treatments or change in one treatment after baiting)"&input$sorp=="Sample size"){
       sidebarMenu(
         tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
-                 tabItem("User Inputs",sliderInput("seroprev1", "True seroprevalence treatment A", min = 0, max = 1,value = 0.2)),
-                 tabItem("User Inputs",sliderInput("seroprev2", "True seroprevalence treatment B", min = 0, max = 1,value = 0.5)),
-                 tags$h3("Power analysis options"),
-                 tabItem("User Inputs",sliderInput("powera", "Power you want", min = 0.05, max = 0.95,value = 0.8)),
-                 tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
-                                                    choiceNames = list("0.01","0.05","0.10","0.20"),
-                                                    choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
+        tabItem("User Inputs",sliderInput("seroprev1", "True seroprevalence treatment A", min = 0, max = 1,value = 0.2)),
+        tabItem("User Inputs",sliderInput("seroprev2", "True seroprevalence treatment B", min = 0, max = 1,value = 0.5)),
+        tags$h3("Power analysis options"),
+        tabItem("User Inputs",sliderInput("powera", "Power you want", min = 0.05, max = 0.95,value = 0.8)),
+        tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
+                                           choiceNames = list("0.01","0.05","0.10","0.20"),
+                                           choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
         
       )
     }else if(input$whichpn=="C) Compare changes in seroprevalence between two treatments"&input$sorp=="Power"){
       sidebarMenu(
         tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
-                 tabItem("User Inputs",sliderInput("seroprevA1", "Expected seroprevalence pre-bait treatment A", min = 0, max = 1,value = 0.2)),
-                 tabItem("User Inputs",sliderInput("seroprevA2", "Expected seroprevalence post-bait treatment A", min = 0, max = 1,value = 0.3)),
-                 tabItem("User Inputs",sliderInput("seroprevB1", "Expected seroprevalence pre-bait treatment B", min = 0, max = 1,value = 0.2)),
-                 tabItem("User Inputs",sliderInput("seroprevB2", "Expected seroprevalence post-bait treatment B", min = 0, max = 1,value = 0.5)),
-                 tags$h3("Power analysis options"),
-                 tabItem("User Inputs",sliderInput("sampleaA1", "# of animals sampled pre-bait treatment A", min = 0, max = 200,value = 30)),
-                 tabItem("User Inputs",sliderInput("sampleaA2", "# of animals sampled post-bait treatment A", min = 0, max = 200,value = 30)),
-                 tabItem("User Inputs",sliderInput("sampleaB1", "# of animals sampled pre-bait treatment B", min = 0, max = 200,value = 30)),
-                 tabItem("User Inputs",sliderInput("sampleaB2", "# of animals sampled post-bait treatment B", min = 0, max = 200,value = 30)),
-                 tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
-                                                    choiceNames = list("0.01","0.05","0.10","0.20"),
-                                                    choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
+        tabItem("User Inputs",sliderInput("seroprevA1", "Expected seroprevalence pre-bait treatment A", min = 0, max = 1,value = 0.2)),
+        tabItem("User Inputs",sliderInput("seroprevA2", "Expected seroprevalence post-bait treatment A", min = 0, max = 1,value = 0.3)),
+        tabItem("User Inputs",sliderInput("seroprevB1", "Expected seroprevalence pre-bait treatment B", min = 0, max = 1,value = 0.2)),
+        tabItem("User Inputs",sliderInput("seroprevB2", "Expected seroprevalence post-bait treatment B", min = 0, max = 1,value = 0.5)),
+        tags$h3("Power analysis options"),
+        tabItem("User Inputs",sliderInput("sampleaA1", "# of animals sampled pre-bait treatment A", min = 0, max = 200,value = 30)),
+        tabItem("User Inputs",sliderInput("sampleaA2", "# of animals sampled post-bait treatment A", min = 0, max = 200,value = 30)),
+        tabItem("User Inputs",sliderInput("sampleaB1", "# of animals sampled pre-bait treatment B", min = 0, max = 200,value = 30)),
+        tabItem("User Inputs",sliderInput("sampleaB2", "# of animals sampled post-bait treatment B", min = 0, max = 200,value = 30)),
+        tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
+                                           choiceNames = list("0.01","0.05","0.10","0.20"),
+                                           choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
         
       )
     }else if(input$whichpn=="C) Compare changes in seroprevalence between two treatments"&input$sorp=="Sample size"){
       sidebarMenu(
         tags$h2(class="primary-subtitle", style='margin-top:8px;margin-left:15px;',"User Inputs",align='left'),
-                 tabItem("User Inputs",sliderInput("seroprevA1", "Expected seroprevalence pre-bait treatment A", min = 0, max = 1,value = 0.2)),
-                 tabItem("User Inputs",sliderInput("seroprevA2", "Expected seroprevalence post-bait treatment A", min = 0, max = 1,value = 0.3)),
-                 tabItem("User Inputs",sliderInput("seroprevB1", "Expected seroprevalence pre-bait treatment B", min = 0, max = 1,value = 0.2)),
-                 tabItem("User Inputs",sliderInput("seroprevB2", "Expected seroprevalence post-bait treatment B", min = 0, max = 1,value = 0.5)),
-                 tags$h3("Power analysis options"),
-                 tabItem("User Inputs",sliderInput("powera", "Power you want", min = 0.05, max = 0.95,value = 0.8)),
-                 tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
-                                                    choiceNames = list("0.01","0.05","0.10","0.20"),
-                                                    choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
+        tabItem("User Inputs",sliderInput("seroprevA1", "Expected seroprevalence pre-bait treatment A", min = 0, max = 1,value = 0.2)),
+        tabItem("User Inputs",sliderInput("seroprevA2", "Expected seroprevalence post-bait treatment A", min = 0, max = 1,value = 0.3)),
+        tabItem("User Inputs",sliderInput("seroprevB1", "Expected seroprevalence pre-bait treatment B", min = 0, max = 1,value = 0.2)),
+        tabItem("User Inputs",sliderInput("seroprevB2", "Expected seroprevalence post-bait treatment B", min = 0, max = 1,value = 0.5)),
+        tags$h3("Power analysis options"),
+        tabItem("User Inputs",sliderInput("powera", "Power you want", min = 0.05, max = 0.95,value = 0.8)),
+        tabItem("User Inputs",radioButtons("alpha","What type I error are you willing to accept (alpha)?",
+                                           choiceNames = list("0.01","0.05","0.10","0.20"),
+                                           choiceValues = list("0.01","0.05","0.10","0.20"),selected = "0.05",inline = TRUE))
         
       )
     }
@@ -259,9 +259,9 @@ server <- function(input, output,session) {
     }else if(input$whichpn=="A) Estimate single seroprevalence (either pre or post baiting)"){
       tabsetPanel(
         tabPanel("Quick Results",
-                 box(width=12,title=span("Single season seroprevalence estimatation",style="color:green;font-size:28px"),status="success",
+                 box(width=12,title=span("Single season seroprevalence estimation",style="color:green;font-size:28px"),status="success",
                      # 
-                     column(6,p("This option of the seroprevalence power calculator app is used to examine how many samples you would need to estimate a single season (either pre- or post- baiting) seroprevalence estimate. Change the User Inputs on the left panel to see how different conditions would change the uncertainty in your seroprevalence estimates (S) and power to detect change. You need to set a baseline value you want to test your seroprevalence against (S0), the default value for this is zero (assuming a naïve population). ",style="font-size:130%;"),
+                     column(6,p("This option of the seroprevalence power calculator app is used to examine how many samples you would need to estimate a single season (either pre- or post- baiting) seroprevalence. Change the User Inputs on the left panel to see how different conditions would change the uncertainty in your seroprevalence estimates (S) and power to detect change. You need to set a baseline value you want to test your seroprevalence against (S0), the default value for this is zero (assuming a naïve population). ",style="font-size:130%;"),
                             p("Note: an error will occur if you set S greater than S0 and select a Less-than test or if you set S less than S0 and select a Greater-than test.",style="color:red;font-size:130%;"))
                  ), 
                  fluidRow(
@@ -328,7 +328,7 @@ server <- function(input, output,session) {
     }else if(input$whichpn=="B) Compare seroprevalence in two conditions (either different treatments or change in one treatment after baiting)"){
       tabsetPanel(
         tabPanel("Quick Results",
-                 box(width=12,title=span("Single season two treatment or two season single treatment seroprevalence estimatation",style="color:green;font-size:28px"),status="success",
+                 box(width=12,title=span("Single season two treatment or two season single treatment seroprevalence estimation",style="color:green;font-size:28px"),status="success",
                      # 
                      column(6,p("This option of the seroprevalence power calculator app is used to examine how many samples you would need to compare two seroprevalences estimates.  These two estimates can either be from two different treatments (different populations) or from the same population but comparing before and after baiting. Change the User Inputs on the left panel to see how different conditions would change the uncertainty in your seroprevalence estimates and power to detect change.",style="font-size:130%;"),
                             p("In this option we are only looking at a one-sided comparison where one treatment is greater than the other. ",style="font-size:130%;"))
@@ -370,7 +370,7 @@ server <- function(input, output,session) {
                  box(width=12,title=span("Power Analysis",style="color:green;font-size:28px"),status="success",
                      # varImp Plot
                      column(width = 6,withSpinner(plotOutput('powerplotB',height = "600px"))),
-                     column(6,p("This option of the seroprevalence power calculator app is used to examine how many samples you would need to compare two seroprevalences estimates.  These two estimates can either be from two different treatments (different populations) or from the same population but comparing before and after baiting.  Depending on the expected seroprevalence values in the two conditions you may need more samples in one site or time period compared to another. You can play around with different sampling options when you estimate power, but when you estimate sample size this app assumes constant sampling across treatments.",style="font-size:130%;"))), 
+                     column(6,p("This option of the seroprevalence power calculator app is used to examine how many samples you would need to compare two seroprevalence estimates.  These two estimates can either be from two different treatments (different populations) or from the same population but comparing before and after baiting.  Depending on the expected seroprevalence values in the two conditions you may need more samples in one site or time period compared to another. You can play around with different sampling options when you estimate power, but when you estimate sample size this app assumes constant sampling across treatments.",style="font-size:130%;"))), 
                  fluidRow(
                    valueBoxOutput("powresboxB"),
                    infoBoxOutput("power80boxB",width = 6)
