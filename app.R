@@ -330,7 +330,7 @@ server <- function(input, output,session) {
         tabPanel("Quick Results",
                  box(width=12,title=span("Single season two treatment or two season single treatment seroprevalence estimation",style="color:green;font-size:28px"),status="success",
                      # 
-                     column(6,p("This option of the seroprevalence power calculator app is used to examine how many samples you would need to compare two seroprevalences estimates.  These two estimates can either be from two different treatments (different populations) or from the same population but comparing before and after baiting. Change the User Inputs on the left panel to see how different conditions would change the uncertainty in your seroprevalence estimates and power to detect change.",style="font-size:130%;"),
+                     column(6,p("This option of the seroprevalence power calculator app is used to examine how many samples you would need to compare two seroprevalence estimates.  These two estimates can either be from two different treatments (different populations) or from the same population but comparing before and after baiting. Change the User Inputs on the left panel to see how different conditions would change the uncertainty in your seroprevalence estimates and power to detect change.",style="font-size:130%;"),
                             p("In this option we are only looking at a one-sided comparison where one treatment is greater than the other. ",style="font-size:130%;"))
                  ), 
                  fluidRow(
@@ -359,7 +359,7 @@ server <- function(input, output,session) {
         tabPanel("Uncertainty",
                  box(width=12,title=span("Sample uncertainty",style="color:green;font-size:28px"),status="success",
                      column(6,plotOutput('propplotB')),
-                     column(6,p("This option of the seroprevalence power calculator app is used to examine how many samples you would need to compare two seroprevalences estimates.  These two estimates can either be from two different treatments (different populations) or from the same population but comparing before and after baiting.  To understand how different samples sizes (n) and seroprevalences (s) would impact the uncertainty around the estimates, you can change the values in the User Input panel to the left.  The uncertainty is directly related to the power to detect a difference, so understand how these factors influence uncertainty can help with planning for your anticipated situation. ",style="font-size:130%;"))   
+                     column(6,p("This option of the seroprevalence power calculator app is used to examine how many samples you would need to compare two seroprevalence estimates.  These two estimates can either be from two different treatments (different populations) or from the same population but comparing before and after baiting.  To understand how different samples sizes (n) and seroprevalences (s) would impact the uncertainty around the estimates, you can change the values in the User Input panel to the left.  The uncertainty is directly related to the power to detect a difference, so understand how these factors influence uncertainty can help with planning for your anticipated situation. ",style="font-size:130%;"))   
                  ),
                  fluidRow(
                    valueBoxOutput("moeboxB")
